@@ -1,15 +1,131 @@
-Part 1: Explanatory Paragraph
-When you type a URL into your web browser (the client), it triggers a request-response cycle by sending an HTTP (Hypertext Transfer Protocol) or securely encrypted HTTPS request across the internet to the server where the website lives. For a static website, the server simply responds by sending pre-written HTML, CSS, and JavaScript files directly back to the client. However, if it is a dynamic website, the server first communicates with a database to retrieve specific, up-to-date data (like user profiles or live feeds) and builds the webpage on the fly before sending the final code back. Once the browser receives this response, it translates the code into the visual website that opens on your screen.
+The HTML Code
+Copy the code below and save it as job-application.html.
 
-Part 2: How to get your Screenshot
-To fulfill the second part of your assignment, you'll need to take a screenshot of the Network tab on your own computer. Here is exactly how to do it:
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+</head>
+<body>
 
-Open Google Chrome and go to any website (e.g., wikipedia.org).
+    <h1>Job Application Form</h1>
+    <p>Please fill out the form below to apply for the open position.</p>
 
-Right-click anywhere on the page and select Inspect (or press Ctrl + Shift + I on Windows / Cmd + Option + I on Mac).
+    <hr>
 
-In the panel that opens, click on the Network tab at the top. (If you don't see it, click the >> arrows to reveal hidden tabs).
+    <form action="#" method="post">
+        
+        <!-- Disabled Field Example -->
+        <div>
+            <label for="appStatus">Application Status:</label>
+            <input type="text" id="appStatus" name="appStatus" value="Draft" disabled>
+        </div>
+        <br>
 
-With the Network tab open, refresh the page (F5 or Ctrl + R). You will see a waterfall of files (requests) loading in the panel.
+        <!-- 1. Full Name, Email, and Phone -->
+        <div>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+        <br>
 
-Take a screenshot of this entire window showing the list of network requests and save it to submit with your paragraph.
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <br>
+
+        <!-- 2. Date input for DOB -->
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <br>
+
+        <!-- 3. URL input for portfolio -->
+        <div>
+            <label for="portfolio">Portfolio URL:</label>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://..." required>
+        </div>
+        <br>
+
+        <!-- 6. Dropdown for Job Role -->
+        <div>
+            <label for="role">Applying For:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select a role...</option>
+                <option value="frontend">Front-End Developer</option>
+                <option value="backend">Back-End Developer</option>
+                <option value="designer">UI/UX Designer</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- 4. Radio buttons for preferred shift -->
+        <fieldset>
+            <legend>Preferred Shift:</legend>
+            <!-- Notice all radio buttons share the name "shift" so only one can be selected -->
+            <input type="radio" id="shiftMorning" name="shift" value="morning" required>
+            <label for="shiftMorning">Morning</label><br>
+
+            <input type="radio" id="shiftEvening" name="shift" value="evening">
+            <label for="shiftEvening">Evening</label><br>
+
+            <input type="radio" id="shiftNight" name="shift" value="night">
+            <label for="shiftNight">Night</label>
+        </fieldset>
+        <br>
+
+        <!-- 5. Checkboxes for skills -->
+        <fieldset>
+            <legend>Technical Skills (Select all that apply):</legend>
+            <input type="checkbox" id="skillHTML" name="skills" value="html">
+            <label for="skillHTML">HTML & CSS</label><br>
+
+            <input type="checkbox" id="skillJS" name="skills" value="javascript">
+            <label for="skillJS">JavaScript</label><br>
+
+            <input type="checkbox" id="skillGit" name="skills" value="git">
+            <label for="skillGit">Git & GitHub</label>
+        </fieldset>
+        <br>
+
+        <!-- 7. Textarea for Cover Letter -->
+        <div>
+            <label for="coverLetter">Cover Letter:</label><br>
+            <textarea id="coverLetter" name="coverLetter" rows="6" cols="40" placeholder="Tell us why you are a great fit for this role..." required></textarea>
+        </div>
+        <br>
+
+        <!-- 8. Submit Button -->
+        <div>
+            <button type="submit">Submit Application</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
+How to Prepare Your Submission:
+Test the Form: Double-click your job-application.html file to open it in your browser.
+
+Verify Functionality:
+
+Check that you can only select one preferred shift at a time (because the radio buttons share the same name attribute).
+
+Check that you can select multiple skills.
+
+Notice that the "Application Status" field is greyed out and cannot be typed into (because of the disabled attribute).
+
+Take a Screenshot: Fill in some sample data and take a clear screenshot showing the different input types.
+
+Submit: Upload your job-application.html file and your screenshot according to your course instructions.
